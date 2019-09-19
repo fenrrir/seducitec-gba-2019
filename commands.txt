@@ -3,3 +3,9 @@ curl -d "nome=joao&nascimento=10/10/10" -X POST http://localhost:8000/api/new-us
 curl http://localhost:8000/api/users-list/
 curl -d "nome=111&nascimento=xxx" -X POST http://localhost:8000/api/new-user/
 curl http://localhost:8000/api/users-list/
+
+# com validação
+curl -d "nome=111&nascimento=xxx" -X POST http://localhost:8000/api/new-user/
+curl http://localhost:8000/api/users-list/
+curl -d "nome=111&nascimento=10/02/19" -X POST http://localhost:8000/api/new-user/
+curl http://localhost:8000/api/users-list/
