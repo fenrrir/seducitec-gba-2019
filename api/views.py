@@ -11,3 +11,11 @@ class ListUsers(APIView):
 
     def get(self, request, format=None):
         return Response(users)
+
+
+class CreateNewUser(APIView):
+
+    def post(self, request, format=None):
+        user = {'nome': request.POST.get('nome'), 'nascimento': request.POST.get('nascimento')}
+        users.append(user)
+        return Response()
