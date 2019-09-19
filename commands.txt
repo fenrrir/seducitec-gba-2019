@@ -20,3 +20,15 @@ curl http://localhost:8000/api/users-list/
 >>> from datetime import date
 >>> models.User.objects.create(nome='Rodrigo', nascimento=date(1985, 7, 10))
 >>> models.User.objects.create(nome='Emanuel', nascimento=date(2001, 9, 12))
+
+# REST e modelos
+navegador localhost:8000/api/
+curl http://localhost:8000/api/users/
+curl -d "nome=joao&nascimento=20/11/2019" -X POST http://localhost:8000/api/users/
+curl -d "nome=joao&nascimento=2019-09-20" -X POST http://localhost:8000/api/users/
+curl http://localhost:8000/api/users/
+curl -X PATCH -d "nome='Rodrigo Pinheiro'" http://localhost:8000/api/users/1/
+curl http://localhost:8000/api/users/
+curl -X DELETE http://localhost:8000/api/users/2/
+curl http://localhost:8000/api/users/
+
