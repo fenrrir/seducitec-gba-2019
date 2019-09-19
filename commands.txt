@@ -9,3 +9,14 @@ curl -d "nome=111&nascimento=xxx" -X POST http://localhost:8000/api/new-user/
 curl http://localhost:8000/api/users-list/
 curl -d "nome=111&nascimento=10/02/19" -X POST http://localhost:8000/api/new-user/
 curl http://localhost:8000/api/users-list/
+
+
+# modelos
+./manage.py startapp app
+./manage.py makemigrations
+./manage.py migrate
+./manage.py shell
+>>> from app import models
+>>> from datetime import date
+>>> models.User.objects.create(nome='Rodrigo', nascimento=date(1985, 7, 10))
+>>> models.User.objects.create(nome='Emanuel', nascimento=date(2001, 9, 12))
